@@ -1,25 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=El+Messiri:wght@400..700&family=Fjalla+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
 body {
     margin: 0 70px ;
-    background-color: #00050e;
+    background-color: #ffffff;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal; 
 }
 #main {
     padding: 10px;
-    
+
 }
 #header {
     display: flex;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
     justify-content: space-between;
     align-items: center;
-    padding: 4px 1px ;
+    padding: 4px 2px ;
 }
 
 #logo-header img {
-    width: 90px;
+    width: 100px;
+    border-radius: 50%
 }
 
 #header-mneu ul{
     display: flex;
-    gap: 100px;
+    gap: 80px;
     list-style: none;
     font-size: 10px;
 }
@@ -27,7 +35,7 @@ body {
 #header-mneu a {
     text-decoration: none;
     color: rgb(0, 0, 0);
-    font-weight: bold;
+    font-weight: inherit;
     align-items: center;
     background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
     border: 0;
@@ -36,7 +44,6 @@ body {
     box-sizing: border-box;
     color: #FFFFFF;
     display: flex;
-    font-family: Phantomsans, sans-serif;
     justify-content: center;
     line-height: 1em;
     max-width: 100%;
@@ -57,12 +64,12 @@ body {
 }
 #header-mneu a span {
     background-color: rgb(5, 6, 45);
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 6px;
     width: 100%;
     height: 100%;
     transition: 300ms;
-    font-size: 15px;
+    font-size: 13px;
     text-align: center;
 
 }
@@ -77,6 +84,37 @@ body {
 @media (min-width: 768px) {
     #header-mneu a {
         font-size: 24px;
-        min-width: 196px;
+        min-width: 140px;
     }
 }
+
+#content {
+    display: flex;
+    padding: 100px 0 ;
+    gap: 30px;
+}
+
+#right-content img {
+    height: 500px;
+    width: 700px;
+    border-radius: 40px;
+}
+
+#left-content h1 {
+    font-size: 60px;
+}
+
+#left-content p {
+    font-size: 30px;
+}
+.logo-text {
+    color: #2596be;
+}
+
+#pag2 {
+    width: 100%;
+    height: 500px;
+    border: 2.2px solid ;
+    border-radius: 40px;
+}
+
