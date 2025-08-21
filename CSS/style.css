@@ -93,13 +93,21 @@ body {
     padding: 100px 0 ;
     gap: 30px;
 }
-
-#right-content img {
-    height: 500px;
-    width: 700px;
+#right-content {
+    height: 550px;
+    width: 1000px;
     border-radius: 40px;
+    overflow: hidden;
 }
-
+#right-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+#right-content img:hover {
+    transform: scale(1.1);
+}
 #left-content h1 {
     font-size: 60px;
 }
@@ -112,9 +120,63 @@ body {
 }
 
 #pag2 {
-    width: 100%;
+    width: 1255px;
     height: 500px;
-    border: 2.2px solid ;
     border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, 
+                rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    align-items: center;
+    background-color: #2596be;
+
 }
 
+#cards {
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+                rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+                rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+                rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    padding: 8px;
+    background-color: #fff9f9;
+
+}
+#clothesImges {
+    width: 238px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    
+
+}
+#clothesImges img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+}
+
+#stor-logo img {
+    width: 70px;
+    border-radius: 50%;
+}
+
+#stor-logo {
+    display: flex;
+    gap: 30px;
+}
+
+#pag2 a {
+    text-decoration: none;
+    font-size: 80px;
+    color: black;
+}
