@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=El+Messiri:wght@400..700&family=Fjalla+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
 body {
-    margin: 0 70px ;
+    margin: 0 70px;
     background-color: #ffffff;
     font-family: "Fjalla One", sans-serif;
     font-weight: 400;
-    font-style: normal; 
+    font-style: normal;
 }
+
 #main {
     padding: 10px;
-
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 #header {
     display: flex;
     position: sticky;
@@ -17,97 +22,66 @@ body {
     background-color: #fff;
     justify-content: space-between;
     align-items: center;
-    padding: 4px 2px ;
+    padding: 4px 2px;
 }
 
 #logo-header img {
     width: 100px;
-    border-radius: 50%
+    border-radius: 50%;
 }
 
-#header-mneu ul{
+#header-mneu ul {
     display: flex;
     gap: 80px;
     list-style: none;
-    font-size: 10px;
-}
-
-#header-mneu a {
+    font-size: 16px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-weight: inherit;
-    align-items: center;
-    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
-    border: 0;
-    border-radius: 8px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    line-height: 1em;
-    max-width: 100%;
-    min-width: 100px;
-    padding: 2px;
+
+}
+
+
+#header-mneu ul a {
     text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    cursor: pointer;
-
+    color: black;
+    transition: color 0.5s;
 }
 
-#header-mneu a:active,
-#header-mneu a:hover {
-    outline: 0;
+#header-mneu ul a i {
+    padding-right: 7px;
 }
-#header-mneu a span {
-    background-color: rgb(5, 6, 45);
-    padding: 6px 12px;
-    border-radius: 6px;
-    width: 100%;
-    height: 100%;
-    transition: 300ms;
-    font-size: 13px;
-    text-align: center;
-
-}
-#header-mneu a:hover span {
-    background: none;
+#header-mneu ul a:hover {
+    color: #2596be;
 }
 #main {
     position: relative;
     z-index: 1;
     padding: 20px;
 }
-@media (min-width: 768px) {
-    #header-mneu a {
-        font-size: 24px;
-        min-width: 140px;
-    }
-}
 
 #content {
     display: flex;
-    padding: 100px 0 ;
+    padding: 100px 0;
     gap: 30px;
 }
+
 #right-content {
     height: 550px;
     width: 1000px;
     border-radius: 40px;
     overflow: hidden;
 }
+
 #right-content img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 1s ease;
 }
+
 #right-content img:hover {
     transform: scale(1.1);
 }
+
 #left-content h1 {
     font-size: 60px;
 }
@@ -115,68 +89,139 @@ body {
 #left-content p {
     font-size: 30px;
 }
+
 .logo-text {
     color: #2596be;
+}
+
+#top-items h1 {
+    text-align: center;
 }
 
 #pag2 {
     width: 1255px;
     height: 500px;
     border-radius: 40px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, 
-                rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     display: flex;
     gap: 40px;
     padding: 40px;
     align-items: center;
     background-color: #2596be;
-
 }
 
-#cards {
-
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
-                rgba(0, 0, 0, 0.12) 0px -12px 30px, 
-                rgba(0, 0, 0, 0.12) 0px 4px 6px, 
-                rgba(0, 0, 0, 0.17) 0px 12px 13px, 
-                rgba(0, 0, 0, 0.09) 0px -3px 5px;
+.cards {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     width: 400px;
     border-radius: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center ;
+    align-items: center;
     padding: 8px;
     background-color: #fff9f9;
-
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-#clothesImges {
-    width: 238px;
+
+.cards:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.clothes-images {
+    width: 260px;
     height: 300px;
     display: flex;
     align-items: center;
-    
-
+    justify-content: center;
 }
-#clothesImges img {
-    width: 100%;
+
+.clothes-images img {
+    max-width: 100%;
     height: 100%;
     border-radius: 20px;
-
 }
 
-#stor-logo img {
+.store-row img {
     width: 70px;
     border-radius: 50%;
 }
 
-#stor-logo {
+.store-row {
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    align-items: center;
+}
+
+.price {
+    color: #2596be;
+    font-weight: bold;
 }
 
 #pag2 a {
+    width: 90px;
+    height: 70px;
+    border-radius: 50%;
     text-decoration: none;
     font-size: 80px;
     color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s ease-in-out;
+}
+
+#pag2 a:hover {
+    background-color: black;
+    color: #2596be;
+}
+
+#modern-listbox {
+    width: 200px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 2px solid #2596be;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#modern-listbox:focus {
+    border-color: #145d9c;
+    box-shadow: 0 0 10px rgba(37, 150, 190, 0.5);
+}
+
+#pag3 {
+    position: relative;
+    display: inline-block;
+}
+
+#pag3::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #2596be;
+    font-size: 12px;
+}
+
+.pag3 {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.select-item-class {
+    padding-right: 20px;
+    font-size: 30px;
+}
+
+#modern-listbox {
+    font-size: 20px;
 }
