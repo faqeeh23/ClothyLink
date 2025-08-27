@@ -74,7 +74,7 @@ function updateCards() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    updateCards(); // عرض أول 3 بطاقات عند تحميل الصفحة
+    updateCards(); 
 
     // <
     document.querySelector('#pag2 a:first-child').addEventListener('click', (e) => {
@@ -90,3 +90,23 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCards();
     });
 });
+
+document.querySelectorAll('#itmes input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', function() {
+            const subFilter = document.getElementById(this.value);
+            if (subFilter) {
+                subFilter.classList.toggle('active', this.checked);
+            }
+        });
+    });
+
+    // إظهار/إخفاء القوائم الفرعية داخل Pants
+    document.querySelectorAll('#Pants input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', function() {
+            const subFilter = document.getElementById(`sub-Pants-${this.value}`);
+            if (subFilter) {
+                subFilter.classList.toggle('active', this.checked);
+            }
+        });
+    });
+
