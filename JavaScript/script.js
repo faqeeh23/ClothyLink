@@ -91,22 +91,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.querySelectorAll('#itmes input[type="checkbox"]').forEach(cb => {
-        cb.addEventListener('change', function() {
-            const subFilter = document.getElementById(this.value);
-            if (subFilter) {
-                subFilter.classList.toggle('active', this.checked);
-            }
-        });
-    });
 
-    // إظهار/إخفاء القوائم الفرعية داخل Pants
-    document.querySelectorAll('#Pants input[type="checkbox"]').forEach(cb => {
-        cb.addEventListener('change', function() {
-            const subFilter = document.getElementById(`sub-Pants-${this.value}`);
-            if (subFilter) {
-                subFilter.classList.toggle('active', this.checked);
-            }
-        });
-    });
+// helper
+function hideAll(selector) {
+    document.querySelectorAll(selector).forEach(el => el.classList.remove('active'))
+}
+
+document.querySelectorAll('#itmes input[type="radio"][name="items"]').forEach(rb => {
+    rb.addEventListener('change' , function() {
+        hideAll('#itmes > .sub-filter')
+
+        const target = document.getElementById(this.value)
+        if (target) target.classList.add('active')
+    })
+})
+
+
+const current = document.getElementById('cp-current')
+const radios = document.querySelectorAll('#T-shirt-color .cp-input[name="color"]')
+
+function displayTextFor(rb) {
+    const lab = document.querySelector('label[for="${rb.id}"]')
+    return lab?.getAttribute('title') || lab?.getAttribute('aria-label') || rb.value;
+}
+
+function updateCurrent() {
+    const checked = document.querySelector('#T-shirt-color .cp-input[name="color"]:checked')
+    if (checked) current.textContent = displayTextFor(checked)
+}
+
+radios.forEach(rb => rb.addEventListener('change', updateCurrent));
+updateCurrent();
+
+
+
+
+
+
+
+
 
